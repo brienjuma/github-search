@@ -31,15 +31,15 @@
         </div>
     </div>
     <div class="container mt-5">
-        <div class="d-flex justify-content-evenly align-items-center">
+        <div class="d-flex flex-column flex-md-row justify-content-evenly align-items-center">
             <div>
-                <img class="img-fluid rounded-circle" width="200vw" src="{{user.avatar_url}}" alt="git hub user avatar">
+                <img class="img-fluid rounded-circle" width="300vw" src="{{user.avatar_url}}" alt="git hub user avatar">
             </div>
-            <div class="bg-dark text-white p-3 m-2 rounded">
-                <p>Username : {{ user.login }}</p>
-                <p>Followers : {{ user.followers }}</p>
-                <p>Following : {{ user.following }}</p>
-                <p>Joined on : {{ user.created_at | date }}</p>
+            <div class="bg-warning text-white p-3 m-2 rounded">
+                <p>Username : <span class="display-6 fw-bold">{{ user.login }}</span></p>
+                <p>Followers : <span class="display-6 fw-bold">{{ user.followers }}</span></p>
+                <p>Following : <span class="display-6 fw-bold">{{ user.following }}</span></p>
+                <p>Joined on : <span class="display-6 fw-bold">{{ user.created_at | date }}</span></p>
             </div>
         </div>
         <div class="d-grid gap-2 col-6 mx-auto mt-3">
