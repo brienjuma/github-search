@@ -1,5 +1,7 @@
 # github-search
-<img src="./Screenshot.png">
+<p align="center">
+<img src="./screenshot.png" width="200px">
+</p>
 
 ## Project Description
 An Angular website consuming the **GitHub API** to retrieve names and descriptions for public repositories belonging to an user on GitHub: the Version Control Website Service based on git.<br>
@@ -25,6 +27,7 @@ Follow this guide to set up the application for use on your local machine.
 ## Built With
 * ANGULAR - web framework for building client applications using TypeScript & HTML.
 * BOOTSTRAP - rapid UI CSS based framework.
+* GitHub API - to retrieve data from the github server.
 
 ## Author 
 jumaBrian
