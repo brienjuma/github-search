@@ -12,7 +12,7 @@ export class RepoSearchService {
   constructor(private http: HttpClient) { 
     this.repositories = new RepositorySearch('',0);
 
-    console.log('Repository Search');
+    console.log('Git Hub API in use');
   }
 
   getRepos(repositoryName: any){
@@ -21,7 +21,7 @@ export class RepoSearchService {
       total_count: number;
     }
     return new Promise((resolve: any,reject)=>{
-      this.http.get<ApiResponse>('https://api.github.com/search/repositories?q=${repositoryName}').toPromise().then(
+      this.http.get<ApiResponse>(`https://api.github.com/search/repositories?q=${repositoryName}`).toPromise().then(
         (result: any)=> {
           this.repositories.items = result.items;
           this.repositories.total_count = result.total_count;

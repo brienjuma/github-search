@@ -12,6 +12,7 @@ import { InvalidSearchComponent } from './components/invalid-search/invalid-sear
 import { GithubService } from './services/github/github.service';
 import { RepositoryViewComponent } from './components/repository-view/repository-view.component';
 import { DateFormatPipe } from './pipes/date-format.pipe';
+import { RepoSearchService } from './services/repo-search/repo-search.service';
 
 
 @NgModule({
@@ -30,7 +31,7 @@ import { DateFormatPipe } from './pipes/date-format.pipe';
     HttpClientModule,
     FormsModule
   ],
-  providers: [GithubService],
+  providers: [GithubService, RepoSearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

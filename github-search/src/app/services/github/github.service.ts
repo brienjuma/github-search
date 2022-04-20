@@ -16,7 +16,7 @@ export class GithubService {
     this.user = new User('',0,0,'',new Date,'');
     this.repository = new Repository('','','','')
 
-    console.log('git service')
+    console.log('git API in use')
   }
 
   getUser(searchName: any){
