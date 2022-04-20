@@ -36,8 +36,13 @@ export class GithubService {
           this.user.html_url = result.html_url;
           console.log(result);
           resolve();
+        },
+        (error)=> {
+          console.log(error);
+          reject();
         }
-      )
-    })
+      );
+    });
   }
+  
 }

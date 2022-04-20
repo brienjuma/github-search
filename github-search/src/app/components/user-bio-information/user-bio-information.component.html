@@ -1,16 +1,18 @@
 <div class="container mt-5">
     <div class="d-flex justify-content-evenly align-items-center">
         <div>
-            <img src="" alt="git hub user avatar">
+            <img class="img-fluid" src="{{user.avatar_url}}" alt="git hub user avatar">
         </div>
         <div>
-            <p>Username:</p>
-            <p>Followers:</p>
-            <p>Following:</p>
-            <p>Joined on:</p>
+            <p>Username : {{ user.login }}</p>
+            <p>Followers : {{ user.followers }}</p>
+            <p>Following : {{ user.following }}</p>
+            <p>Joined on : {{ user.created_at | date }}</p>
         </div>
     </div>
     <div class="d-grid gap-2 col-6 mx-auto mt-3">
-        <button class="btn btn-dark rounded" type="button">Check Profile on gitHub</button>
-      </div>
+        <button class="btn btn-dark rounded" type="button">
+            <a href="{{user.html_url}}"></a>
+            Check Profile on gitHub</button>
+    </div>
 </div>
