@@ -35,22 +35,21 @@
     style="max-width: 20rem"
     id="cards"
   >
-    <div class="card-header fw-bold">{{ item.full_name }}</div>
+    <div class="card-header fw-bold bg-dark text-white">{{ item.full_name }}</div>
     <div class="card-body">
       <h4 class="card-title">Description:</h4>
       <p class="card-text">{{ item.description }}</p>
   
       <p>Programming Languange: {{ item.language }}</p>
     </div>
-    <div class="card-footer">
+    <div class="card-footer text-center">
       <button
         type="button"
-        class="btn btn-dark rounded-pill"
+        class="btn btn-dark rounded-pill py-2"
         data-bs-toggle="tooltip"
         data-bs-placement="left"
-        id="btn"
       >
-        <a href="{{ item.html_url }}" class="card-link"
+        <a href="{{ item.html_url }}" target="_blank" class="card-link"
           >Check On Github
         </a>
       </button>
