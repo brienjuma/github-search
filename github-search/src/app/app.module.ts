@@ -11,6 +11,7 @@ import { UserBioInformationComponent } from './components/user-bio-information/u
 import { InvalidSearchComponent } from './components/invalid-search/invalid-search.component';
 import { GithubService } from './services/github/github.service';
 import { RepositoryViewComponent } from './components/repository-view/repository-view.component';
+import { DateFormatPipe } from './pipes/date-format.pipe';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { RepositoryViewComponent } from './components/repository-view/repository
     SearchComponent,
     UserBioInformationComponent,
     InvalidSearchComponent,
-    RepositoryViewComponent
+    RepositoryViewComponent,
+    DateFormatPipe
   ],
   imports: [
     BrowserModule,
