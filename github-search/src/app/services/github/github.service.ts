@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from 'src/app/models/user/user';
+import { Repository } from 'src/app/models/repository/repository';
 
 @Injectable({
   providedIn: 'root'
@@ -8,9 +9,12 @@ import { User } from 'src/app/models/user/user';
 export class GithubService {
 
   user!: User;
+  repository!: Repository;
+  repositoryItems: any;
 
   constructor(private http: HttpClient) { 
     this.user = new User('',0,0,'',new Date,'');
+    this.repository = new Repository('','','','')
 
     console.log('git service')
   }
@@ -44,5 +48,25 @@ export class GithubService {
       );
     });
   }
-  
+
+
+  getRepositories(searchName:any){
+    interface ApiResponse{
+      repositories: [];
+    }
+
+    return new Promise((resolve:any,reject)=>{
+      this.http.get<ApiResponse>('https://api.github.com/users/'+searchName+'/repositories').toPromise().then(
+        (results) => {
+          this.repositoryItems = results;
+          console.log(results)
+          resolve();
+        },
+        (error) => {
+          console.log(error);
+          reject();
+        }
+        );    
+    });
+  }
 }

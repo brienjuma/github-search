@@ -10,6 +10,7 @@ import { SearchComponent } from './components/search/search.component';
 import { UserBioInformationComponent } from './components/user-bio-information/user-bio-information.component';
 import { InvalidSearchComponent } from './components/invalid-search/invalid-search.component';
 import { GithubService } from './services/github/github.service';
+import { RepositoryViewComponent } from './components/repository-view/repository-view.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { GithubService } from './services/github/github.service';
     HeaderComponent,
     SearchComponent,
     UserBioInformationComponent,
-    InvalidSearchComponent
+    InvalidSearchComponent,
+    RepositoryViewComponent
   ],
   imports: [
     BrowserModule,
