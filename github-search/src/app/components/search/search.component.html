@@ -1,0 +1,33 @@
+<div class="container mt-5">
+    <div class="d-flex justify-content-center flex-column align-items-center">
+        <div>
+            <img src="../../../assets/logo.png" alt="brand logo">
+        </div>
+        <div class="mt-5">
+            <form>
+                <div class="d-flex flex-column flex-md-row align-items-center">
+                    <div class="form-group">
+                        <input
+                          type="text"
+                          class="form-control rounded-pill px-5 py-3"
+                          id="searchName"
+                          placeholder="Enter GitHub Username"
+                          #searchName
+                        />
+                    </div>
+                    &nbsp;
+                    <div class="form-group">
+                        <button
+                          (click)="(searchName.value)"
+                          (click)="(searchName.value)"
+                          class="btn btn-success btn-lg px-5"
+                          type="submit"
+                        >
+                          Search
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
