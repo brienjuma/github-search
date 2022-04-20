@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/user/user';
 
 @Component({
   selector: 'app-user-bio-information',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-bio-information.component.css']
 })
 export class UserBioInformationComponent implements OnInit {
+  user!: User;
 
   constructor() { }
 

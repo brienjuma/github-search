@@ -9,6 +9,20 @@ export class SearchComponent implements OnInit {
 
   constructor() { }
 
+  searchUser(searchName:string){
+    if (searchName !=='') {
+      this.searchService.getUser(searchName)
+      console.log(searchName)
+    };
+  };
+
+  searchRepos(searchName:string){
+    if (searchName !=='') {
+      this.searchService.getRepositories(searchName)
+      console.log(searchName)
+    };
+  };
+
   ngOnInit(): void {
   }
 
