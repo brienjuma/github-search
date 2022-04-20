@@ -1,1 +1,61 @@
-<p>repository-view works!</p>
+<div class="container my-5">
+  <div class="d-flex justify-content-center flex-column align-items-center">
+    <div>
+      <img src="../../../assets/logo.png" alt="brand logo">
+  </div>
+  <div class="mt-5">
+    <form>
+      <div class="d-flex flex-column flex-md-row align-items-center">
+          <div class="form-group">
+              <input 
+              type="text" 
+              class="form-control rounded-pill px-5 py-3" 
+              id="searchName"
+              placeholder="Enter GitHub Repository" 
+              #searchRep />
+          </div>
+          &nbsp;
+          <div class="form-group">
+              <button 
+              (click)="searchRepo(searchRep.value)" 
+              class="btn btn-success btn-lg px-5" 
+              type="submit">
+                  Search
+              </button>
+          </div>
+      </div>
+  </form>
+  </div>
+  </div>
+</div>
+<div class="container my-5">
+  <div
+    *ngFor="let item of repositories.items; let i = index"
+    class="d-inline-flex justify-content-around card border-light mb-3"
+    style="max-width: 20rem"
+    id="cards"
+  >
+    <div class="card-header fw-bold">{{ item.full_name }}</div>
+    <div class="card-body">
+      <h4 class="card-title">Description:</h4>
+      <p class="card-text">{{ item.description }}</p>
+  
+      <p>Programming Languange: {{ item.language }}</p>
+    </div>
+    <div class="card-footer">
+      <button
+        type="button"
+        class="btn btn-dark rounded-pill"
+        data-bs-toggle="tooltip"
+        data-bs-placement="left"
+        id="btn"
+      >
+        <a href="{{ item.html_url }}" class="card-link"
+          >Check On Github
+        </a>
+      </button>
+    </div>
+  </div>
+</div>
+
+  
