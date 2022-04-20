@@ -7,23 +7,14 @@
             <form>
                 <div class="d-flex flex-column flex-md-row align-items-center">
                     <div class="form-group">
-                        <input
-                          type="text"
-                          class="form-control rounded-pill px-5 py-3"
-                          id="searchName"
-                          placeholder="Enter GitHub Username"
-                          #searchName
-                        />
+                        <input type="text" class="form-control rounded-pill px-5 py-3" id="searchName"
+                            placeholder="Enter GitHub Username" #searchName />
                     </div>
                     &nbsp;
                     <div class="form-group">
-                        <button
-                          (click)="searchUser(searchName.value)"
-                          (click)="searchRepos(searchName.value)"
-                          class="btn btn-success btn-lg px-5"
-                          type="submit"
-                        >
-                          Search
+                        <button (click)="searchUser(searchName.value)" (click)="searchRepos(searchName.value)"
+                            class="btn btn-success btn-lg px-5" type="submit">
+                            Search
                         </button>
                     </div>
                 </div>
@@ -42,10 +33,45 @@
                 <p>Joined on : <span class="display-6 fw-bold">{{ user.created_at | date }}</span></p>
             </div>
         </div>
-        <div class="d-grid gap-2 col-6 mx-auto mt-3">
-            <button class="btn btn-dark rounded" type="button">
-                <a href="{{user.html_url}}"></a>
-                Check Profile on gitHub</button>
+        <div class="container">
+            <div class="d-grid gap-2 col-6 mx-auto my-5">
+                <button class="btn btn-dark rounded py-2" type="button">
+                    <a href="{{user.html_url}}" target="_blank">
+                        Check Profile on gitHub
+                    </a>
+                </button>
+            </div>
         </div>
+    </div>
+    <div class="container mt-5">
+        <div
+  *ngFor="let repository of searchService.repositoryItems; let i = index"
+  class="d-inline-flex justify-content-around card text-white border-light mb-3"
+  style="max-width: 20rem"
+  id="cards"
+>
+  <div class="card-header" appHighlight>Repository: {{ repository.name }}</div>
+  <div class="card-body">
+    <h4 class="card-title"></h4>
+    <p class="card-text">Description: {{ repository.description }}</p>
+    <p>Created on: {{ repository.created_at | dateFormat }}</p>
+  </div>
+  <div class="card-footer">
+    <button
+      type="button"
+      class="btn btn-dark rounded-pill"
+      data-bs-toggle="tooltip"
+      data-bs-placement="left"
+      title="Tooltip on left"
+      id="btn"
+    >
+      <a href="{{ repository.html_url }}" class="card-link"
+        >See More &nbsp;
+        <i class="fa fa-arrow-circle-right" style="font-size: 16px"></i
+      ></a>
+    </button>
+  </div>
+</div>
+
     </div>
 </div>
