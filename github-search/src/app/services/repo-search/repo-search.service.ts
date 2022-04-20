@@ -7,6 +7,7 @@ import { RepositorySearch } from 'src/app/models/repository-search/repository-se
   providedIn: 'root'
 })
 export class RepoSearchService {
+
   repositories!: RepositorySearch;
 
   constructor(private http: HttpClient) { 
@@ -20,9 +21,9 @@ export class RepoSearchService {
       items: any;
       total_count: number;
     }
-    return new Promise((resolve: any,reject)=>{
-      this.http.get<ApiResponse>(`https://api.github.com/search/repositories?q=${repositoryName}`).toPromise().then(
-        (result: any)=> {
+    return new Promise((resolve:any,reject)=>{
+      this.http.get<ApiResponse>(` https://api.github.com/search/repositories?q=${repositoryName}`).toPromise().then(
+        (result: any) => {
           this.repositories.items = result.items;
           this.repositories.total_count = result.total_count;
 
@@ -35,5 +36,6 @@ export class RepoSearchService {
         }
       );
     });
+    
   }
 }

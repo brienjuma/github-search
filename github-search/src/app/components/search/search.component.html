@@ -44,34 +44,25 @@
         </div>
     </div>
     <div class="container mt-5">
-        <div
-  *ngFor="let repository of searchService.repositoryItems; let i = index"
-  class="d-inline-flex justify-content-around card text-white border-light mb-3"
-  style="max-width: 20rem"
-  id="cards"
->
-  <div class="card-header" appHighlight>Repository: {{ repository.name }}</div>
-  <div class="card-body">
-    <h4 class="card-title"></h4>
-    <p class="card-text">Description: {{ repository.description }}</p>
-    <p>Created on: {{ repository.created_at | dateFormat }}</p>
-  </div>
-  <div class="card-footer">
-    <button
-      type="button"
-      class="btn btn-dark rounded-pill"
-      data-bs-toggle="tooltip"
-      data-bs-placement="left"
-      title="Tooltip on left"
-      id="btn"
-    >
-      <a href="{{ repository.html_url }}" class="card-link"
-        >See More &nbsp;
-        <i class="fa fa-arrow-circle-right" style="font-size: 16px"></i
-      ></a>
-    </button>
-  </div>
-</div>
-
+        <div 
+        *ngFor="let repository of searchService.repositoryItems; let i = index"
+         class="d-inline-flex justify-content-around card border-light mb-3" 
+         style="max-width: 20rem" 
+         id="cards">
+            <div class="card-header fw-bold bg-dark text-white">{{ repository.name }}</div>
+            <div class="card-body">
+                <h4 class="card-title">Description:</h4>
+                <p class="card-text">{{ repository.description }}</p>
+                <p>Programming Languange: {{ repository.language }}</p>
+                <p>Created on: {{ repository.created_at | dateFormat }}</p>
+            </div>
+            <div class="card-footer text-center">
+                <button type="button" class="btn btn-dark rounded-pill py-2" data-bs-toggle="tooltip"
+                    data-bs-placement="left">
+                    <a href="{{ repository.html_url }}" target="_blank" class="card-link">Check On Github
+                    </a>
+                </button>
+            </div>
+        </div>
     </div>
 </div>
