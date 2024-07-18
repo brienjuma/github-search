@@ -33,8 +33,8 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
     this.user = this.searchService.user;
     this.repositories = this.searchService.repositoryItems;
-    this.searchUser("jumaBrian");
-    this.searchRepos("jumaBrian");
+    this.searchUser("brienjuma");
+    this.searchRepos("brienjuma");
   }
   
 }
